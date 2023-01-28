@@ -35,6 +35,14 @@ module.exports = {
           outputPath: 'images',
         }
       },
+      {
+        test: /\.(svg)$/,
+        use: [{
+          loader: 'babel-loader'
+        }, {
+          loader: 'svg-react-loader'
+        }]
+      }
     ],
   },
 
