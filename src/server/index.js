@@ -41,7 +41,7 @@ function htmlTemplate(reactDom) {
         </head>
 
         <body class="u-green1">
-            <div id="app">${reactDom}</div>
+            <div id="root">${reactDom}</div>
             <script src="/static/bundle.js"></script>
         </body>
       </html>
