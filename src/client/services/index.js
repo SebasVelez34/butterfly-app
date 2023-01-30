@@ -1,13 +1,15 @@
 import Company from './Company';
 import Question from './Question';
 import Mood from './Mood';
-import MoodSelectionPage from './MoodSelectionPage';
 import Answer from './Answer';
+import MoodSelectionPage from './MoodSelectionPage';
+import QuestionsPage from './QuestionsPage';
 
 export {
   Company,
   Question,
   Mood,
+  Answer,
   MoodSelectionPage,
-  Answer
+  QuestionsPage
 }

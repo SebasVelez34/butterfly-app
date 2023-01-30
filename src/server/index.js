@@ -1,37 +1,44 @@
-import express from 'express';
 import path from 'path';
-
+import express from 'express';
+import serialize from 'serialize-javascript'
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { matchPath } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
+
+import apiRoutes from './api';
 import routes from '../routes';
 
-import Layout from '../client/Pages/Layout';
+import App from '../client/App';
 
 const app = express();
 
+app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, '..', '..', 'dist', 'static')));
+app.use('/api', apiRoutes);
 
 app.get('/*', async (req, res) => {
-  const context = {};
-  const dataRequirements =
-    routes
-      .filter(route => matchPath(route, req.url)) // filter matching paths
-      .map(route => route.component); // dispatch data requirement
-  Promise.all(dataRequirements).then(() => {
-    const jsx = (
-      <StaticRouter context={context} location={req.url}>
-        <Layout />
-      </StaticRouter>
-    );
-    const reactDom = renderToString(jsx);
-    res.send(htmlTemplate(reactDom));
-  });
+  const activeRoute = routes.find((route) =>
+    matchPath(route.path, req.url)
+  ) || {};
 
+  const promise = activeRoute.fetchInitialData
+  ? activeRoute.fetchInitialData(req.path)
+  : Promise.resolve();
+
+    promise
+    .then((data) => {
+      const jsx = (
+        <StaticRouter location={req.url}>
+          <App serverData={data}/>
+        </StaticRouter>
+      );
+      const reactDOM = renderToString(jsx);
+      res.send(htmlTemplate(reactDOM, data));
+    })
 });
 
-function htmlTemplate(reactDom) {
+function htmlTemplate(reactDOM, data) {
   return `
       <!DOCTYPE html>
       <html>
@@ -40,8 +47,9 @@ function htmlTemplate(reactDom) {
             <title>Butterfly</title>
         </head>
 
-        <body class="u-green1">
-            <div id="root">${reactDom}</div>
+        <body>
+            <div id="root">${reactDOM}</div>
+            <script>window.__INITIAL_DATA__ = ${serialize(data, { isJSON: true })}</script>
             <script src="/static/bundle.js"></script>
         </body>
       </html>

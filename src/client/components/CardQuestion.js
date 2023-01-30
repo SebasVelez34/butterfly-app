@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Stars from './Stars';
 import Comment from './Comment';
 
-const CardQuestion = ({ handleCardQuestion, title, questionId = 1, handleButton }) => {
+const CardQuestion = ({ handleCardQuestion, title, questionId, handleButton, tag }) => {
   const [comment, setComment] = useState(false);
   const [value, setValue] = useState({
     questionId,
@@ -44,7 +44,7 @@ const CardQuestion = ({ handleCardQuestion, title, questionId = 1, handleButton 
         handleChangeStar={handleChangeStar}
       />
       <button onClick={handleClickShowComment} name={`revealCommentField1`} className='comment-button' type='button'>add a comment</button>
-      {comment && <Comment handleChangeComment={handleChangeComment} />}
+      {comment && <Comment tag={tag} handleChangeComment={handleChangeComment} />}
     </div>
   )
 }

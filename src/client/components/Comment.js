@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Comment = ({ handleChangeComment, name = 'ss' }) => {
+const Comment = ({ handleChangeComment, tag }) => {
   return (
     <div className='comment'>
       <div className='comment-form' >
         <textarea
-          placeholder='Anything to add or suggest to your manager?'
-          name={name}
+          placeholder={`Anything to add for ${tag} ?`}
+          name={tag}
           className='comment-input'
           onChange={handleChangeComment}
         />
