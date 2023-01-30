@@ -1,5 +1,5 @@
 import React from "react";
-import QuestionForm from "../Components/QuestionsForm";
+import QuestionForm from "../components/QuestionsForm";
 
 const Questions = () => {
   return <>

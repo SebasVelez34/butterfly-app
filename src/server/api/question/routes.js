@@ -4,4 +4,4 @@ const router = express.Router();
 
 router.get('/:companyId', controller.getQuestionsByCompany);
 
-module.exports = router;
+export default router;

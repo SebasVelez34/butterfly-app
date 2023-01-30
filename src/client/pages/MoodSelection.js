@@ -1,27 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import Mood from '../Components/Mood';
-const moods = [
-  { value: 1, mood: 'VeryUnhappy' },
-  { value: 2, mood: 'Unhappy' },
-  { value: 3, mood: 'Neutral' },
-  { value: 4, mood: 'Happy' },
-  { value: 5, mood: 'VeryHappy' }
-]
-const companyName = "DEMO INC."
+import Mood from '../components/Mood';
+//TODO: Get images from Assets folder
 
-const MoodSelection = () => {
-  //TODO: Get Moods from database
-  //TODO: DEMO INC company name get from database
-  //TODO: Get images from Assets folder
+const MoodSelection = (props) => {
   return <>
     <div className="demo-wrapper">
       <img className="demo-header" src="https://assets.butterfly.ai/email-images/bf-banner.v2.png" />
 
       <div className="demo-body">
         <div className="demo-body__title">
-          <strong>{companyName}</strong> would like to know:
+          <strong>jeje</strong> would like to know:
         </div>
 
         <div className="demo-body__question">
@@ -29,7 +19,7 @@ const MoodSelection = () => {
         </div>
 
         <div className="demo-body__moods">
-          {moods.map(({value}) =>
+          {props.data.map(({ value }) =>
             <Link to={`/questions/${value}`} key={value}>
               <Mood mood={value} />
             </Link>)}

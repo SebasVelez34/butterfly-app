@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from '../connection';
 
 const QuestionSchema = new mongoose.Schema({
   title: {
