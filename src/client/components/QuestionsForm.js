@@ -12,7 +12,6 @@ const QuestionForm = ({ mood, questions, moodValue, company }) => {
     answers: {},
     anythingToAdd: ''
   });
-  console.log("🚀 ~ file: QuestionsForm.js:15 ~ QuestionForm ~ form", form)
   const [submitForm, setSubmitForm] = useState(false);
   const [responses, setResponses] = useState(1);
   const [showButton, setShowButton] = useState(false);
@@ -26,12 +25,8 @@ const QuestionForm = ({ mood, questions, moodValue, company }) => {
   }
 
   const handleCardQuestion = (questionId, value) => {
-    console.log("🚀 ~ file: QuestionsForm.js:29 ~ handleCardQuestion ~ questionId", questionId)
-    console.log("🚀 ~ file: QuestionsForm.js:29 ~ handleCardQuestion ~ value", value)
     setForm(prev => {
-      
       prev.answers[questionId] = value;
-      console.log("PREV",prev.answers[questionId])
       return {
         ...prev
       }

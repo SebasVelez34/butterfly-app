@@ -114,10 +114,10 @@ a svg.star-icon {
   }
 }
 .selected[data-star='2'] {
-  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-rating 50%,transparent 0);
   &~a {
-    background: $red-orange-rating;
+    background: $red-rating;
   }
   ~svg.star-icon>path {
     fill:white;
@@ -133,10 +133,10 @@ a svg.star-icon {
   }
 }
 .selected[data-star='3'] {
-  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
   &~a {
-    background: $orange-rating;
+    background: $red-orange-rating;
   }
   svg.star-icon>path {
     fill:white;
@@ -152,10 +152,10 @@ a svg.star-icon {
   }
 }
 .selected[data-star='4'] {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
   &~a {
-    background: $yellow-rating;
+    background: $red-orange-rating;
   }
   svg.star-icon>path {
     fill:white;
@@ -172,11 +172,113 @@ a svg.star-icon {
 }
 // .stars-meter>a:first-child.selected
 .selected[data-star='5'] {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: $orange-rating;
   &~a {
-    background: $yellow-rating;
+    background: $orange-rating;
+  }
+  svg.star-icon>path {
+    fill:white;
+  }
+  svg.star-icon {
+    border-radius: 50%;
+    background-color: $background-color;
+    height: 4.2rem;
+    width: 4.2rem;
+    margin: -.4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+.selected[data-star='6'] {
+  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: $orange-rating;
+  &~a {
+    background: $orange-rating;
+  }
+  svg.star-icon>path {
+    fill:white;
+  }
+  svg.star-icon {
+    border-radius: 50%;
+    background-color: $background-color;
+    height: 4.2rem;
+    width: 4.2rem;
+    margin: -.4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+.selected[data-star='7'] {
+  background: -webkit-linear-gradient(left,$light-green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$light-green-rating 50%,transparent 0);
+  background: $light-green-rating;
+  &~a {
+    background: $light-green-rating;
+  }
+  svg.star-icon>path {
+    fill:white;
+  }
+  svg.star-icon {
+    border-radius: 50%;
+    background-color: $background-color;
+    height: 4.2rem;
+    width: 4.2rem;
+    margin: -.4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+.selected[data-star='8'] {
+  background: -webkit-linear-gradient(left,$light-green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$light-green-rating 50%,transparent 0);
+  background: $light-green-rating;
+  &~a {
+    background: $light-green-rating;
+  }
+  svg.star-icon>path {
+    fill:white;
+  }
+  svg.star-icon {
+    border-radius: 50%;
+    background-color: $background-color;
+    height: 4.2rem;
+    width: 4.2rem;
+    margin: -.4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+.selected[data-star='9'] {
+  background: -webkit-linear-gradient(left,$green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$green-rating 50%,transparent 0);
+  background: $green-rating;
+  &~a {
+    background: $green-rating;
+  }
+  svg.star-icon>path {
+    fill:white;
+  }
+  svg.star-icon {
+    border-radius: 50%;
+    background-color: $background-color;
+    height: 4.2rem;
+    width: 4.2rem;
+    margin: -.4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+.selected[data-star='10'] {
+  background: -webkit-linear-gradient(left,$green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$green-rating 50%,transparent 0);
+  background: $green-rating;
+  &~a {
+    background: $green-rating;
   }
   svg.star-icon>path {
     fill:white;
@@ -193,6 +295,7 @@ a svg.star-icon {
 }
 
 
+
 //////////////////////////////////
 [data-star='1']:hover {
   background: -webkit-linear-gradient(left,$red-rating 0%, transparent 0);
@@ -205,52 +308,52 @@ a svg.star-icon {
   }
 }
 [data-star='2']:hover {
-  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-rating 50%,transparent 0);
   &~a, {
-    background: $red-orange-rating;
+    background: $red-rating;//$red-orange-rating;
   }
   svg.star-icon>path {
     fill:white;
   }
 }
 [data-star='3']:hover {
-  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
   &~a, {
-    background: $orange-rating;
+    background: $red-orange-rating;//$orange-rating;
   }
   svg.star-icon>path {
     fill:white;
   }
 }
 [data-star='4']:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
+  background: -webkit-linear-gradient(left,$red-orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$red-orange-rating 50%,transparent 0);
   &~a, {
-    background: $yellow-rating;
+    background: $red-orange-rating;//$yellow-rating;
   }
   svg.star-icon>path {
     fill:white;
   }
 }
 [data-star="5"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: $orange-rating;
   &~a, {
-    background: $yellow-rating;
+    background: $orange-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
   }
 }
-  [data-star="6"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+[data-star="6"]:hover {
+  background: -webkit-linear-gradient(left,$orange-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$orange-rating 50%,transparent 0);
+  background: $orange-rating;//$yellow-rating;
   &~a, {
-    background: $yellow-rating;
+    background:$orange-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
@@ -258,11 +361,11 @@ a svg.star-icon {
 }
 
   [data-star="7"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$light-green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$light-green-rating 50%,transparent 0);
+  background: $light-green-rating;
   &~a, {
-    background: $yellow-rating;
+    background: $light-green-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
@@ -270,11 +373,11 @@ a svg.star-icon {
 }
 
   [data-star="8"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$light-green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$light-green-rating 50%,transparent 0);
+  background: $light-green-rating;
   &~a, {
-    background: $yellow-rating;
+    background: $light-green-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
@@ -282,11 +385,11 @@ a svg.star-icon {
 }
 
   [data-star="9"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$green-rating 50%,transparent 0);
+  background: $green-rating;
   &~a, {
-    background: $yellow-rating;
+    background: $green-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
@@ -294,11 +397,11 @@ a svg.star-icon {
 }
 
   [data-star="10"]:hover {
-  background: -webkit-linear-gradient(left,$yellow-rating 0%, transparent 0);
-  background: linear-gradient(90deg,$yellow-rating 50%,transparent 0);
-  background: $yellow-rating;
+  background: -webkit-linear-gradient(left,$green-rating 0%, transparent 0);
+  background: linear-gradient(90deg,$green-rating 50%,transparent 0);
+  background: $green-rating;
   &~a, {
-    background: $yellow-rating;
+    background: $green-rating;
   }
   svg.star-icon>path:hover {
     fill:white;
