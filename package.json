@@ -36,14 +36,12 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "isomorphic-fetch": "^3.0.0",
     "mongoose": "^6.9.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
     "serialize-javascript": "^6.0.1"
   }

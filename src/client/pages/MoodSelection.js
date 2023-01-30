@@ -6,10 +6,29 @@ import Mood from '../components/Mood';
 
 const MoodSelection = (props) => {
   const [data, setData] = useState(() => {
-    return typeof window !== "undefined"
-      ? window.__INITIAL_DATA__
-      : props.data
+    let newData = props.data;
+    if (typeof window !== "undefined") {
+      newData = window.__INITIAL_DATA__;
+      delete window.__INITIAL_DATA__;
+    }
+    return newData;
   });
+
+  const [loading, setLoading] = useState(data ? false : true);
+
+  useEffect(() => {
+    if (!data) {
+      setLoading(true);
+      props.fetchInitialData().then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+    }
+  }, []);
+
+  if (loading === true) {
+    return <i className="loading">🤹‍♂️</i>;
+  }
 
   return <>
     <div className="demo-wrapper">

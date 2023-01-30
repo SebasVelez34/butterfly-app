@@ -21,6 +21,7 @@
 
   .select-mood-smile {
     display: inline;
+    cursor: pointer;
     svg {
       box-sizing: border-box;
       height: 13rem;
@@ -61,6 +62,10 @@
     strong {
       color: $logo-color
     }
+  }
+
+  .edit-mood-smile{
+    cursor: pointer;
   }
 }
 

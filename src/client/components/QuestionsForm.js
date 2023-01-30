@@ -4,18 +4,19 @@ import QuestionMood from "../components/QuestionMood";
 import ExtraComment from './ExtraComment';
 import { Answer } from '../services'
 import ThankYou from './ThankYou';
-const companyId = '63d6914ba76bbbcbab9bdf43';
 
 
-const QuestionForm = ({ moods, questions, moodValue, company }) => {
+const QuestionForm = ({ mood, questions, moodValue, company }) => {
   const [form, setForm] = useState({
-    mood: 1,
+    mood: moodValue,
     answers: {},
     anythingToAdd: ''
   });
+  console.log("🚀 ~ file: QuestionsForm.js:15 ~ QuestionForm ~ form", form)
   const [submitForm, setSubmitForm] = useState(false);
   const [responses, setResponses] = useState(1);
   const [showButton, setShowButton] = useState(false);
+
   const handleChangeExtraComment = (e) => {
     e.preventDefault();
     setForm({
@@ -25,17 +26,30 @@ const QuestionForm = ({ moods, questions, moodValue, company }) => {
   }
 
   const handleCardQuestion = (questionId, value) => {
+    console.log("🚀 ~ file: QuestionsForm.js:29 ~ handleCardQuestion ~ questionId", questionId)
+    console.log("🚀 ~ file: QuestionsForm.js:29 ~ handleCardQuestion ~ value", value)
     setForm(prev => {
+      
       prev.answers[questionId] = value;
+      console.log("PREV",prev.answers[questionId])
       return {
         ...prev
       }
     });
   }
 
+  const handleMood = (newMood) => {
+    setForm(prev => {
+      return {
+        ...prev,
+        mood: newMood
+      }
+    });
+  }
+
   const handleButton = () => {
     setResponses(prev => ++prev);
-    if (responses === questions.length) {
+    if (responses === questions.length && form.mood > 0) {
       setShowButton(true);
     }
   }
@@ -55,8 +69,9 @@ const QuestionForm = ({ moods, questions, moodValue, company }) => {
           <>
             <div className="mood">
               <QuestionMood
-                moods={moods}
+                moods={mood}
                 moodValue={moodValue}
+                handleMood={handleMood}
               />
             </div>
             <div className="question-form">
@@ -64,7 +79,7 @@ const QuestionForm = ({ moods, questions, moodValue, company }) => {
               <div>
                 <form onSubmit={handleSubmit}>
                   {
-                    questions && questions.map(({title, tag, _id}) => {
+                    questions && questions.map(({ title, tag, _id }) => {
                       return (
                         <CardQuestion
                           title={title}

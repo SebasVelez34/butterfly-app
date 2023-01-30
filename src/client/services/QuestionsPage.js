@@ -9,7 +9,7 @@ const fetchInitialData = async ({ companyId, value }) => {
     resolve({
       company: companyData,
       mood: moods,
-      questions,
+      questions: questions,
       moodValue: value
     })
   });
